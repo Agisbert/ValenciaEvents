@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="LightRed">#F26C4F</color>
+    <color name="LightRedOrange">#F68E55</color>
+    <color name="LightYellowOrange">#FBAF5C</color>
+    <color name="LightYellow">#FFF467</color>
+    <color name="LightPeaGreen">#ACD372</color>
+    <color name="LightYellowGreen">#7CC576</color>
+    <color name="LightGreen">#3BB878</color>
+    <color name="LightGreenCyan">#1ABBB4</color>
+    <color name="LightCyan">#00BFF3</color>
+    <color name="LightCyanBlue">#438CCA</color>
+    <color name="LightBlue">#5574B9</color>
+    <color name="LightBlueViolet">#605CA8</color>
+    <color name="LightViolet">#855FA8</color>
+    <color name="LightVioletMagenta">#A763A8</color>
+    <color name="LightMagenta">#F06EA9</color>
+    <color name="LightMagentaRed">#F26D7D</color>
+    
+    <color name="BACKGROUNDGREY">#BFBFBF</color>
+    <color name="SHADOWGREY">#9C9C9C</color>
+    <color name="google_fuentes">#717171</color>
+    <color name="google_fuentes_second">#8d8d8d</color>
+    
+    <color name="google_sombra">#dcdcdc</color>
+    <color name="google_fondo">#eeeeee</color>
+    
+    <color name="pastel_red">#F7977A</color>
+    <color name="pastel_yellow">#FFF79A</color>
+    <color name="pastel_green">#A2D39C</color>
+    <color name="pastel_blue">#7EA7D8</color>
+    <color name="pastel_violet">#A187BE</color>
+    <color name="pastel_grey">#A0A0A0</color>
+
+
+    <color name="transparent">#FFFFFF</color>
+    
+</resources>

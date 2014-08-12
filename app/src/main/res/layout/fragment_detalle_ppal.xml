@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:scrollbars="none" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin" >
+
+        <TextView
+            android:id="@+id/fecha_detalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/google_fuentes_second"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/tipo_detalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/google_fuentes_second"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/fecha_detalle"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/titulo_detalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tipo_detalle"
+            android:textColor="@color/google_fuentes"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/descripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/titulo_detalle"
+            android:layout_marginTop="@dimen/nuevo_titulo"
+            android:textColor="@color/google_fuentes"
+            android:text="@string/Desc"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/descripcion_detalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/descripcion"
+            android:layout_gravity="right"
+            android:textColor="@color/google_fuentes_second"
+            android:layout_marginTop="@dimen/titulo_parrafo"
+            android:text=""
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/lugar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/descripcion_detalle"
+            android:layout_marginTop="@dimen/nuevo_titulo"
+            android:textColor="@color/google_fuentes"
+            android:text="@string/Lugar"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/lugar_detalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/google_fuentes_second"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/lugar"
+            android:layout_marginTop="@dimen/titulo_parrafo"
+            android:text=""
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/caracteristica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/lugar_detalle"
+            android:textColor="@color/google_fuentes"
+            android:layout_marginTop="@dimen/titulo_parrafo"
+            android:text="@string/Carac"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/caracteristica_detalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/google_fuentes_second"
+            android:layout_below="@+id/caracteristica"
+            android:layout_marginTop="@dimen/titulo_parrafo"
+            android:text=""
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/precio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/caracteristica_detalle"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="@dimen/nuevo_titulo"
+            android:textColor="@color/google_fuentes"
+            android:layout_toLeftOf="@+id/precio_detalle"
+            android:text="@string/Precio"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/precio_detalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/google_fuentes_second"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/caracteristica_detalle"
+            android:layout_marginTop="@dimen/nuevo_titulo"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:typeface="monospace" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/nuevo_titulo"
+            android:gravity="center_horizontal"
+            android:weightSum="5"
+            android:layout_below="@+id/precio_detalle">
+
+            <ImageButton
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/addthis" />
+
+            <ImageButton
+                android:id="@+id/shareButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/sharethis" />
+            
+            <ImageButton
+                android:id="@+id/plusButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/googleplus_revised" />
+            <ImageButton
+                android:id="@+id/faceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/facebook" />
+
+            <ImageButton
+                android:id="@+id/twitterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/twitter" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>
