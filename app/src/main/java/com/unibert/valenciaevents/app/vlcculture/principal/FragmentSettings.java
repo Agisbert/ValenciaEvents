@@ -63,7 +63,7 @@ public class FragmentSettings extends Fragment {
 
 		View rootView = inflater.inflate(
 				R.layout.fragment_settings, container, false);
-
+/*
 		nombre = (EditText) rootView.findViewById(R.id.nombre_edit_sett);
 		notificaciones = (CheckBox) rootView.findViewById(R.id.nott_radio);
 		grupo = (RadioGroup) rootView.findViewById(R.id.radioGroup1);
@@ -89,7 +89,8 @@ public class FragmentSettings extends Fragment {
 			todos.setChecked(true);
 			break;
 		}
-		editor = settings.edit();
+		editor = settings.edit();*/
+/*
 
 		grupo.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
@@ -125,9 +126,9 @@ public class FragmentSettings extends Fragment {
 
 				if(	!nombre.getText().toString().equals("") && //no vacio no vac
 						settings.getInt(Constantes.ID, 0)==0){
-					new RegisterUser(getActivity()).execute(0);
+//					new RegisterUser(getActivity()).execute(0);
 				}else if(!nombre.getText().toString().equals("") && settings.getInt(Constantes.ID, 0)!=0){
-					new RegisterUser(getActivity()).execute(1);
+//					new RegisterUser(getActivity()).execute(1);
 				}else{
 					Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.revisa_datos), Toast.LENGTH_SHORT).show();
 				}
@@ -147,6 +148,7 @@ public class FragmentSettings extends Fragment {
 
 
 		mSignInButton = (Button) rootView.findViewById(R.id.plusButtonlog);
+*/
 
 		return rootView;
 	}
@@ -155,7 +157,7 @@ public class FragmentSettings extends Fragment {
 
 
 
-	public class RegisterUser extends AsyncTask < Integer, String, Integer >{
+	/*public class RegisterUser extends AsyncTask < Integer, String, Integer >{
 
 		@Override
 		protected void onPostExecute(Integer result) {
@@ -242,6 +244,6 @@ public class FragmentSettings extends Fragment {
 
 
 		}
-	}
+	}*/
 
 }

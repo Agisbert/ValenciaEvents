@@ -9,11 +9,8 @@ public class Constantes {
 	
 	public static final String COMENTARIO_VACIO = "NONE";
 	
-	public static final String URL_DESARROLLO = "http://192.168.1.40:8080/Plantilla/eventos?_OPERACION=1&_ULTIMO=";
-	public static final String URL_USERS = "http://192.168.1.40:8080/Plantilla/usuarios?_OPERACION=1&_NOMBRE=";
+	public static final String URL_DESARROLLO = "http://192.168.1.37:8080/Vplans/Download?id=";
 
-	public static final String URL_USERS_BAJA = "http://192.168.1.40:8080/Plantilla/usuarios?_OPERACION=2&_ID=";
-	public static final String URL_COMENTS = "http://192.168.1.40:8080/Plantilla/comentarios?";
 	
 	public static final boolean EVENTO_COMPLETO = true;
 	public static final String PASS_ACTIVITY = "ACTIVIDAD";
