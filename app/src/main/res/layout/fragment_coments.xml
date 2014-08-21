@@ -44,7 +44,7 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:src="@drawable/messenger" >
+            android:src="@drawable/ic_action_chat" >
         </ImageButton>
     </LinearLayout>
 

@@ -11,4 +11,16 @@
         <item name="android:customNavigationLayout">@layout/menu_layout_principal</item>
         <item name="android:displayOptions"></item>
     </style>
+
+    <style name="CustomActionBarTheme2" parent="@android:style/Theme.Holo.Light">
+        <item name="android:windowActionBarOverlay">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:actionBarStyle">@style/MyActionBar2</item>
+    </style>
+
+    <style name="MyActionBar2" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:customNavigationLayout">@layout/menu_layout_detalle</item>
+        <item name="android:displayOptions"></item>
+    </style>
 </resources>

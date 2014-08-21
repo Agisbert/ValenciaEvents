@@ -5,7 +5,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:scrollbars="none" >
+    android:scrollbars="none">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,28 +13,28 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin" >
+        android:paddingTop="@dimen/activity_vertical_margin">
 
         <TextView
             android:id="@+id/fecha_detalle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/google_fuentes_second"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/google_fuentes_second"
             android:typeface="monospace" />
 
         <TextView
             android:id="@+id/tipo_detalle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/google_fuentes_second"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/fecha_detalle"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/google_fuentes_second"
             android:typeface="monospace" />
 
         <TextView
@@ -43,9 +43,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/tipo_detalle"
-            android:textColor="@color/google_fuentes"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/google_fuentes"
             android:typeface="monospace" />
 
         <TextView
@@ -55,8 +55,8 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/titulo_detalle"
             android:layout_marginTop="@dimen/nuevo_titulo"
-            android:textColor="@color/google_fuentes"
             android:text="@string/Desc"
+            android:textColor="@color/google_fuentes"
             android:textStyle="bold"
             android:typeface="monospace" />
 
@@ -67,9 +67,9 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/descripcion"
             android:layout_gravity="right"
-            android:textColor="@color/google_fuentes_second"
             android:layout_marginTop="@dimen/titulo_parrafo"
             android:text=""
+            android:textColor="@color/google_fuentes_second"
             android:typeface="monospace" />
 
         <TextView
@@ -79,8 +79,8 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/descripcion_detalle"
             android:layout_marginTop="@dimen/nuevo_titulo"
-            android:textColor="@color/google_fuentes"
             android:text="@string/Lugar"
+            android:textColor="@color/google_fuentes"
             android:textStyle="bold"
             android:typeface="monospace" />
 
@@ -88,11 +88,11 @@
             android:id="@+id/lugar_detalle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/google_fuentes_second"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/lugar"
             android:layout_marginTop="@dimen/titulo_parrafo"
             android:text=""
+            android:textColor="@color/google_fuentes_second"
             android:typeface="monospace" />
 
         <TextView
@@ -101,9 +101,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/lugar_detalle"
-            android:textColor="@color/google_fuentes"
             android:layout_marginTop="@dimen/titulo_parrafo"
             android:text="@string/Carac"
+            android:textColor="@color/google_fuentes"
             android:textStyle="bold"
             android:typeface="monospace" />
 
@@ -112,10 +112,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:textColor="@color/google_fuentes_second"
             android:layout_below="@+id/caracteristica"
             android:layout_marginTop="@dimen/titulo_parrafo"
             android:text=""
+            android:textColor="@color/google_fuentes_second"
             android:typeface="monospace" />
 
         <TextView
@@ -125,10 +125,10 @@
             android:layout_below="@+id/caracteristica_detalle"
             android:layout_marginRight="5dp"
             android:layout_marginTop="@dimen/nuevo_titulo"
-            android:textColor="@color/google_fuentes"
             android:layout_toLeftOf="@+id/precio_detalle"
             android:text="@string/Precio"
             android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/google_fuentes"
             android:textStyle="bold"
             android:typeface="monospace" />
 
@@ -136,63 +136,88 @@
             android:id="@+id/precio_detalle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/google_fuentes_second"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/caracteristica_detalle"
             android:layout_marginTop="@dimen/nuevo_titulo"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/google_fuentes_second"
             android:typeface="monospace" />
+
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_below="@+id/precio_detalle"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/nuevo_titulo"
             android:gravity="center_horizontal"
-            android:weightSum="5"
-            android:layout_below="@+id/precio_detalle">
+            android:weightSum="5">
 
-            <ImageButton
+
+            <Button
                 android:id="@+id/addButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:src="@drawable/addthis" />
+                android:drawableTop="@drawable/addthis"
+                android:text="@string/boton_apuntate"
+                android:typeface="monospace"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/google_fuentes_second" />
 
-            <ImageButton
-                android:id="@+id/shareButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:src="@drawable/sharethis" />
-            
-            <ImageButton
+            <Button
                 android:id="@+id/plusButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:src="@drawable/googleplus_revised" />
-            <ImageButton
+                android:drawableTop="@drawable/googleplus_revised"
+                android:text="@string/boton_plus"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                android:textColor="@color/google_fuentes_second" />
+
+            <Button
                 android:id="@+id/faceButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:src="@drawable/facebook" />
+                android:drawableTop="@drawable/facebook"
+                android:text="@string/boton_facebook"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                android:textColor="@color/google_fuentes_second" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/twitterButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:src="@drawable/twitter" />
+                android:drawableTop="@drawable/twitter"
+                android:text="@string/boton_twitter"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                android:textColor="@color/google_fuentes_second" />
+
+            <Button
+                android:id="@+id/shareButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/sharethis"
+                android:text="@string/boton_otros"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:typeface="monospace"
+                android:textColor="@color/google_fuentes_second" />
+
         </LinearLayout>
+
     </RelativeLayout>
 
 </ScrollView>

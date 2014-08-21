@@ -17,17 +17,17 @@ public class Constantes {
 
 	public static final int PIN_TEATRO = R.drawable.marker_red;
 	public static final int PIN_MUSICA = R.drawable.marker_blue;
-	public static final int PIN_CINE = R.drawable.marker_black;
+	public static final int PIN_CINE = R.drawable.marker_green;
 	public static final int PIN_CONFERENCIA = R.drawable.marker_violet;
-	public static final int PIN_EXPO = R.drawable.marker_yellow;
-	public static final int PIN_OTROS = R.drawable.marker_green;
+	public static final int PIN_EXPO = R.drawable.marker_black;
+	public static final int PIN_OTROS = R.drawable.marker_yellow;
 	
 	public static final int BALL_TEATRO = R.drawable.marker_red_ball;
 	public static final int BALL_MUSICA = R.drawable.marker_blue_ball;
-	public static final int BALL_CINE = R.drawable.marker_black_ball;
+	public static final int BALL_CINE = R.drawable.marker_green_ball;
 	public static final int BALL_CONFERENCIA = R.drawable.marker_violet_ball;
-	public static final int BALL_EXPO = R.drawable.marker_yellow_ball;
-	public static final int BALL_OTROS = R.drawable.marker_green_ball;
+	public static final int BALL_EXPO = R.drawable.marker_black_ball;
+	public static final int BALL_OTROS = R.drawable.marker_yellow_ball;
 	
 	
     public static final String pastel_red = "#F7977A";

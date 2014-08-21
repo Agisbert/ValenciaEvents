@@ -1,34 +1,252 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:facebook="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
-    <com.facebook.widget.ProfilePictureView
+    <com.unibert.valenciaevents.app.adaptadores.ProfilePictureView
         android:id="@+id/profilePicture"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_marginBottom="10dp"
-        facebook:preset_size="normal"
-        android:layout_gravity="center_horizontal" />
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        facebook:preset_size="normal" />
+
     <TextView
         android:id="@+id/nombreFB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_below="@+id/profilePicture"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/google_fuentes"
-        android:textSize="14dip"
-        android:textStyle="normal"
-        android:typeface="normal" />
+        android:typeface="monospace" />
 
     <com.facebook.widget.LoginButton
         android:id="@+id/authButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/nombreFB"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        />
+        android:layout_marginTop="@dimen/titulo_parrafo" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/eventosLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/authButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/nuevo_titulo_doble"
+        android:text="@string/Eventos"
+        android:textColor="@color/google_fuentes"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/eventosNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventosLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/titulo_parrafo"
+        android:text=""
+        android:textColor="@color/google_fuentes_second"
+        android:typeface="monospace" />
+
+    <LinearLayout
+        android:id="@+id/tipos1"
+        android:layout_below="@+id/eventosNumber"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/nuevo_titulo_doble"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="center">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/marker_green"
+                android:textColor="@color/google_fuentes"
+                android:typeface="monospace"
+                android:text="@string/Cine"
+                android:clickable="false"
+                android:id="@+id/" />
+            <TextView
+                android:id="@+id/contador_cine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/google_fuentes_second"
+                android:typeface="monospace"
+                android:text=""
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/marker_blue"
+                android:textColor="@color/google_fuentes"
+                android:typeface="monospace"
+                android:text="@string/Musica"
+                android:clickable="false"/>
+            <TextView
+                android:id="@+id/contador_musica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/google_fuentes_second"
+                android:typeface="monospace"
+                android:text=""
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/marker_red"
+                android:textColor="@color/google_fuentes"
+                android:typeface="monospace"
+                android:text="@string/Teatro"
+                android:clickable="false"/>
+            <TextView
+                android:id="@+id/contador_teatro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/google_fuentes_second"
+                android:typeface="monospace"
+                android:text=""
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tipos2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tipos1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/nuevo_titulo_doble"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/marker_yellow"
+                android:textColor="@color/google_fuentes"
+                android:typeface="monospace"
+                android:text="@string/Otros"
+                android:clickable="false"/>
+            <TextView
+                android:id="@+id/contador_otros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/google_fuentes_second"
+                android:typeface="monospace"
+                android:text=""
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+           <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/marker_violet"
+            android:textColor="@color/google_fuentes"
+            android:typeface="monospace"
+            android:text="@string/Conferencia"
+            android:clickable="false"/>
+            <TextView
+                android:id="@+id/contador_conferencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/google_fuentes_second"
+                android:typeface="monospace"
+                android:text=""
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/marker_black"
+                android:textColor="@color/google_fuentes"
+                android:typeface="monospace"
+                android:text="@string/Exposiciones"
+                android:clickable="false"/>
+            <TextView
+                android:id="@+id/contador_expo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/google_fuentes_second"
+                android:typeface="monospace"
+                android:text=""
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_action_about" />
+</RelativeLayout>

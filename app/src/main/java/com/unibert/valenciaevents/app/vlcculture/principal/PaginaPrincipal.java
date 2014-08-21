@@ -1,7 +1,6 @@
 package com.unibert.valenciaevents.app.vlcculture.principal;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -10,8 +9,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 
+import com.unibert.valenciaevents.app.clases.Evento;
 import com.unibert.valenciaevents.app.constantes.Constantes;
 import com.unibert.valenciaevents.app.vlcculture.R;
+
+import java.util.List;
 
 
 public class PaginaPrincipal extends FragmentActivity {
@@ -40,13 +42,7 @@ public class PaginaPrincipal extends FragmentActivity {
 
     public static FragmentManager fragmentManager;
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == Constantes.REQUEST_LISTA_PPAL) {
-//			fragmentListaAsistencia.new LoadAsisted(this).execute();
-        }
-
-    }
+    public List<Evento> listaEventosPpal;
 
     public void refreshsettings() {
         fragmentListaPrincipal.new DownloadEvents(this).execute(Constantes.REQUEST_LISTA_PPAL_BD);
@@ -69,7 +65,6 @@ public class PaginaPrincipal extends FragmentActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setCurrentItem(1);
         mViewPager.setOffscreenPageLimit(4);
-
 
     }
 
@@ -136,6 +131,7 @@ public class PaginaPrincipal extends FragmentActivity {
             return null;
         }
     }
+
 }
 
 

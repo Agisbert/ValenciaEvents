@@ -22,6 +22,13 @@
     <string name="MapaBusqueda">Mapa</string>
     <string name="TituloBusqueda">Eventos de las proximas 24h </string>
     <string name="Comentar">Comenta o pregunta aquí</string>
+    <string name="Asistidos">Has asistido a:</string>
+    <string name="PorAsistir">Estas apuntado a:</string>
+    <string name="dia">Eventos proximas 24h</string>
+    <string name="semana">Eventos próximos 7 dias</string>
+    <string name="mes">Eventos próximos 30 dias</string>
+
+
 
     <string-array name="planets_array">
         <item>Tipo</item>
@@ -128,4 +135,18 @@
     <string name="app_id">696648307080753</string>
     <string name="title_facebook_login">Vplans</string>
 
+    <string name="boton_facebook">Facebook</string>
+    <string name="boton_twitter">Twitter</string>
+    <string name="boton_plus">Google+</string>
+    <string name="boton_otros">Otros</string>
+    <string name="boton_apuntate">Apúntate</string>
+    <string name="boton_desapuntate">Bórrate</string>
+
+    <string name="Cine">CINE</string>
+    <string name="Teatro">TEATRO</string>
+    <string name="Musica">MUSICA</string>
+    <string name="Conferencia">CONFERENCIA</string>
+    <string name="Exposiciones">EXPO</string>
+    <string name="Otros">OTROS</string>
+    <string name="Eventos">EVENTOS</string>
 </resources>

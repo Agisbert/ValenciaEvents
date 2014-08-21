@@ -1,6 +1,5 @@
 package com.unibert.valenciaevents.app.vlcculture.principal;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
@@ -25,8 +24,8 @@ import com.unibert.valenciaevents.app.clases.Evento;
 import com.unibert.valenciaevents.app.constantes.Constantes;
 import com.unibert.valenciaevents.app.constantes.Utiles;
 import com.unibert.valenciaevents.app.dao.EventoDAO;
-import com.unibert.valenciaevents.app.vlcculture.detalle.DetallePrincipal;
 import com.unibert.valenciaevents.app.vlcculture.R;
+import com.unibert.valenciaevents.app.vlcculture.detalle.DetallePrincipal;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -132,7 +131,7 @@ public class FragmentMapa extends Fragment {
     public class AddMarkers extends AsyncTask<List<TipoSelected>, Void, List<Evento>> {
 
         EventoDAO data;
-        ProgressDialog dialog;
+//        ProgressDialog dialog;
         private Fragment referencia;
 
         public AddMarkers(Fragment fragment) {
@@ -142,11 +141,11 @@ public class FragmentMapa extends Fragment {
 
         @Override
         protected void onPreExecute() {
-            dialog = new ProgressDialog(referencia.getActivity());
-            dialog.setTitle(referencia.getActivity().getApplicationContext().getResources().getString(R.string.Cargando));
-            dialog.setMessage(referencia.getActivity().getApplicationContext().getResources().getString(R.string.Espere));
-            dialog.setCancelable(true);
-            dialog.show();
+//            dialog = new ProgressDialog(referencia.getActivity());
+//            dialog.setTitle(referencia.getActivity().getApplicationContext().getResources().getString(R.string.Cargando));
+//            dialog.setMessage(referencia.getActivity().getApplicationContext().getResources().getString(R.string.Espere));
+//            dialog.setCancelable(true);
+//            dialog.show();
         }
 
         @Override
@@ -158,7 +157,7 @@ public class FragmentMapa extends Fragment {
         @Override
         protected void onPostExecute(List<Evento> result) {
             ((FragmentMapa) referencia).mapeaPosicion(result);
-            dialog.dismiss();
+//            dialog.dismiss();
         }
 
         private HashMap<Long, String> getAdresses(List<Evento> eventos) throws IOException {
