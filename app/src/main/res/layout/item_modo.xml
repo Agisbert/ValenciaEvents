@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/info"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="3dp"
+    android:layout_marginRight="3dp"
+    android:layout_gravity="center"
+    android:layout_marginTop="3dp"
+    android:background="@android:color/transparent" >
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/titulo_parrafo" >
+
+        <RadioButton
+            android:id="@+id/all_radio"
+            style="@android:style/Widget.CompoundButton.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pass_edit_sett"
+            android:checked="true"
+            android:text="@string/eventos_todos"
+            android:typeface="monospace" />
+
+        <RadioButton
+            android:id="@+id/free_radio"
+            style="@android:style/Widget.CompoundButton.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/all_radio"
+            android:text="@string/eventos_gratis"
+            android:typeface="monospace" />
+
+        <RadioButton
+            android:id="@+id/family_radio"
+            style="@android:style/Widget.CompoundButton.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/free_radio"
+            android:text="@string/eventos_familiares"
+            android:typeface="monospace" />
+    </RadioGroup>
+
+
+</RelativeLayout>

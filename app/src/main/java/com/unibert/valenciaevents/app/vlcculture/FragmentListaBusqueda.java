@@ -51,7 +51,7 @@ public class FragmentListaBusqueda extends Fragment {
 
 		View rootView = inflater.inflate(
 				R.layout.fragment_lista_ppal, container, false);
-		listappal = (ListView) rootView.findViewById(R.id.ListaPpal);
+//		listappal = (ListView) rootView.findViewById(R.id.ListaPpal);
 
 		ListasSerializer aux = (ListasSerializer) this.getActivity().getIntent().getExtras().getSerializable(Constantes.PASS_LIST_TYPES);
 		if(aux!=null){

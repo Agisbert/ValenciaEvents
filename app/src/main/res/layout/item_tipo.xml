@@ -6,7 +6,7 @@
     android:layout_marginRight="3dp"
     android:layout_gravity="center"
     android:layout_marginTop="3dp"
-    android:background="@android:color/white" >
+    android:background="@android:color/transparent" >
 
     <TextView
         android:id="@+id/nombre"

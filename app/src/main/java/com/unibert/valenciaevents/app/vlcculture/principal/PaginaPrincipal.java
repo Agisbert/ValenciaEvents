@@ -1,19 +1,43 @@
 package com.unibert.valenciaevents.app.vlcculture.principal;
 
 
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
+import android.widget.ListView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.unibert.valenciaevents.app.adaptadores.ListaDrawerAdapter;
+import com.unibert.valenciaevents.app.adaptadores.TipoSelected;
+import com.unibert.valenciaevents.app.asyncTasks.ThreadDirecciones;
 import com.unibert.valenciaevents.app.clases.Evento;
+import com.unibert.valenciaevents.app.clases.Response;
 import com.unibert.valenciaevents.app.constantes.Constantes;
+import com.unibert.valenciaevents.app.constantes.TiposEnum;
+import com.unibert.valenciaevents.app.constantes.Utiles;
+import com.unibert.valenciaevents.app.dao.EventoDAO;
 import com.unibert.valenciaevents.app.vlcculture.R;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.lang.reflect.Type;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 
 public class PaginaPrincipal extends FragmentActivity {
@@ -32,7 +56,11 @@ public class PaginaPrincipal extends FragmentActivity {
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    ViewPager mViewPager;
+    private ViewPager mViewPager;
+
+    private DrawerLayout mDrawerLayout;
+
+    private ListView mDrawerList;
 
     private FragmentListaPrincipal fragmentListaPrincipal;
 
@@ -43,11 +71,6 @@ public class PaginaPrincipal extends FragmentActivity {
     public static FragmentManager fragmentManager;
 
     public List<Evento> listaEventosPpal;
-
-    public void refreshsettings() {
-        fragmentListaPrincipal.new DownloadEvents(this).execute(Constantes.REQUEST_LISTA_PPAL_BD);
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +89,17 @@ public class PaginaPrincipal extends FragmentActivity {
         mViewPager.setCurrentItem(1);
         mViewPager.setOffscreenPageLimit(4);
 
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+        List<TipoSelected> tiposSeleccionados = new ArrayList<TipoSelected>();
+        for (TiposEnum tipo : TiposEnum.values()) {
+            tiposSeleccionados.add(new TipoSelected(tipo.name(), true));
+        }
+
+        mDrawerList.setAdapter(new ListaDrawerAdapter(this,tiposSeleccionados));
+
+        new DownloadEvents().execute(Constantes.REQUEST_LISTA_PPAL);
     }
 
     @Override
@@ -104,10 +138,10 @@ public class PaginaPrincipal extends FragmentActivity {
                 fragmentListaPrincipal = (FragmentListaPrincipal) fragment;
             } else if (position == 0) {//Fragment Mapa
                 fragment = new FragmentMapa();
-                fragmentMapa=(FragmentMapa) fragment;
-            }else if(position==2){ // Fragment Perfil
-            	fragment = new FragmentSettings();
-            	fragmentSettings = (FragmentSettings) fragment;
+                fragmentMapa = (FragmentMapa) fragment;
+            } else if (position == 2) { // Fragment Perfil
+                fragment = new FragmentSettings();
+                fragmentSettings = (FragmentSettings) fragment;
             }
             return fragment;
         }
@@ -132,6 +166,78 @@ public class PaginaPrincipal extends FragmentActivity {
         }
     }
 
+    public class DownloadEvents extends AsyncTask<Integer, String, Set<Evento>> {
+
+        EventoDAO data;
+        ProgressDialog loading;
+
+        public DownloadEvents() {
+            this.data = new EventoDAO(PaginaPrincipal.this);
+
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            loading = ProgressDialog.show(PaginaPrincipal.this, "", PaginaPrincipal.this.getResources().getString(R.string.Cargando), true, false);
+        }
+
+        @SuppressWarnings("unchecked")
+        @Override
+        protected Set<Evento> doInBackground(Integer... params) {
+            if (params[0] == Constantes.REQUEST_LISTA_PPAL) {
+                Gson gson = new Gson();
+                int ultimo = 0;
+                try {
+                    ultimo = data.getLastID();
+                    URL event = new URL(Constantes.URL_DESARROLLO + ultimo);
+                    URLConnection con = event.openConnection();
+                    con.setConnectTimeout(Constantes.TIMEOUT_URL);
+                    InputStream input = con.getInputStream();
+                    Reader reader = new InputStreamReader(input, "UTF-8");
+                    Response resp = gson.fromJson(reader, Response.class);
+                    if (resp.isOk()) {
+                        Type listType = new TypeToken<List<Evento>>() {
+                        }.getType();
+                        listaEventosPpal = (List<Evento>) gson.fromJson((String) resp.getObject(), listType);
+                        if (listaEventosPpal.size() > 0) {
+                            data.persist(listaEventosPpal);
+                        }
+                        SharedPreferences.Editor editor = getSharedPreferences(Constantes.LASTUPDATEREF, Context.MODE_PRIVATE).edit();
+                        editor.putString(Constantes.LASTUPDATEREF, Utiles.formatFecha(new Date()));
+                        editor.commit();
+                    } else {
+                        listaEventosPpal = null;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            listaEventosPpal = data.getListaPpal(PaginaPrincipal.this.getSharedPreferences("settings", 0).getInt(Constantes.LISTA_CRIT, 0));
+
+            publishProgress("");
+            new Thread(new ThreadDirecciones(PaginaPrincipal.this, data, listaEventosPpal)).start();
+
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(String... values) {
+            super.onProgressUpdate(values);
+            fragmentListaPrincipal.nuevaLista(listaEventosPpal);
+//            fragmentSettings.nuevosDatos(listaEventosPpal);
+
+            loading.dismiss();
+        }
+
+        @Override
+        protected void onPostExecute(Set<Evento> result) {
+            super.onPostExecute(result);
+
+
+        }
+
+    }
 }
 
 

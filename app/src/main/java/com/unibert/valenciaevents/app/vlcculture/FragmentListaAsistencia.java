@@ -47,7 +47,7 @@ public class FragmentListaAsistencia extends Fragment {
 
 		View rootView = inflater.inflate(
 				R.layout.fragment_lista_ppal, container, false);
-		listappal = (ListView) rootView.findViewById(R.id.ListaPpal);
+//		listappal = (ListView) rootView.findViewById(R.id.ListaPpal);
 
 		if(listaEventos==null){
 			new LoadAsisted(this.getActivity()).execute(Constantes.REQUEST_LISTA_PPAL);

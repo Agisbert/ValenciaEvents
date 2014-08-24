@@ -9,17 +9,29 @@
 
     
     <ListView
-        android:id="@+id/ListaPpal"
+        android:id="@+id/listaPpal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_above="@+id/lastupdate"
         android:background="@android:color/transparent"
         android:divider="@android:color/transparent"
         android:dividerHeight="10dp" >
 
     </ListView>
 
+    <TextView
+        android:id="@+id/lastupdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/google_fuentes_second"
+        android:textSize="10dip"
+        android:typeface="monospace"
+
+        />
 
 
 </RelativeLayout>

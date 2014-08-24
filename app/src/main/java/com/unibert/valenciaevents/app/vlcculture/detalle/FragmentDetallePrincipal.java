@@ -13,7 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,11 +42,11 @@ public class FragmentDetallePrincipal extends Fragment {
 
 	private static TextView carac_tit;
 
-	private static Button asistir_butt;
-	private static Button share_butt;
-	private static Button gplus_butt;
-	private static Button face_butt;
-	private static Button twitt_butt;
+	private static ImageButton asistir_butt;
+	private static ImageButton share_butt;
+	private static ImageButton gplus_butt;
+	private static ImageButton face_butt;
+	private static ImageButton twitt_butt;
 
 	private static Evento evento;
 
@@ -69,11 +69,11 @@ public class FragmentDetallePrincipal extends Fragment {
 		carac = (TextView) rootView.findViewById(R.id.caracteristica_detalle);
 		lugar = (TextView) rootView.findViewById(R.id.lugar_detalle);
 		precio = (TextView) rootView.findViewById(R.id.precio_detalle);
-		share_butt = (Button) rootView.findViewById(R.id.shareButton);
-		gplus_butt = (Button) rootView.findViewById(R.id.plusButton);
-		face_butt = (Button) rootView.findViewById(R.id.faceButton);
-		twitt_butt = (Button) rootView.findViewById(R.id.twitterButton);
-		asistir_butt = (Button) rootView.findViewById(R.id.addButton);
+		share_butt = (ImageButton) rootView.findViewById(R.id.shareButton);
+		gplus_butt = (ImageButton) rootView.findViewById(R.id.plusButton);
+		face_butt = (ImageButton) rootView.findViewById(R.id.faceButton);
+		twitt_butt = (ImageButton) rootView.findViewById(R.id.twitterButton);
+		asistir_butt = (ImageButton) rootView.findViewById(R.id.addButton);
 
 		Long id = this.getActivity().getIntent().getLongExtra(Constantes.PASS_ACTIVITY, 0);
 		new LoadDesc(this.getActivity()).execute(id);
@@ -175,11 +175,9 @@ public class FragmentDetallePrincipal extends Fragment {
 			lugar.setText(result.getLugar());
 			precio.setText(result.getPrecio());
 			if(result.isAsistir()){
-				asistir_butt.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.subthis,0,0);
-                asistir_butt.setText(R.string.boton_desapuntate);
+				asistir_butt.setImageResource(R.drawable.subthis);
 			}else{
-				asistir_butt.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.addthis,0,0);
-                asistir_butt.setText(R.string.boton_apuntate);
+				asistir_butt.setImageResource(R.drawable.addthis);
 			}
 			String descripcion = result.getDescripcion();
 			if(result.getSubtipo()!=null){
@@ -216,12 +214,11 @@ public class FragmentDetallePrincipal extends Fragment {
 		protected void onPostExecute(String result) {
 			if("true".equals(result)){
 				Toast.makeText(referencia.get(), R.string.AsistenciaOK, Toast.LENGTH_SHORT).show();
-                asistir_butt.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.subthis,0,0);
-                asistir_butt.setText(R.string.boton_desapuntate);
+                asistir_butt.setImageResource(R.drawable.subthis);
 			}else{
 				Toast.makeText(referencia.get(), R.string.AsistenciaKO, Toast.LENGTH_SHORT).show();
-                asistir_butt.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.addthis,0,0);
-                asistir_butt.setText(R.string.boton_apuntate);
+                asistir_butt.setImageResource(R.drawable.addthis);
+
 			}
 
 		}

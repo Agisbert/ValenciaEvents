@@ -61,7 +61,16 @@ public class Constantes {
 	public static final String FAMILIARES = "family";
 	public static final String LISTA_CRIT = "criteria";
 
-	
-	
+    public static final String LASTUPDATEREF = "LASTUPDATE";
+
+
+    public static final String Cine = "cine";
+    public static final String Teatro = "teatro";
+    public static final String Musica = "musica";
+    public static final String Otros = "otros";
+    public static final String Expo = "exposiciones";
+    public static final String Confer = "conferencia";
+
+
 	
 }

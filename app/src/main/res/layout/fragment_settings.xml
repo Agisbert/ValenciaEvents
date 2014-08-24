@@ -8,12 +8,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
+
     <com.unibert.valenciaevents.app.adaptadores.ProfilePictureView
         android:id="@+id/profilePicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/nombreFB"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         facebook:preset_size="normal" />
 
@@ -21,9 +23,8 @@
         android:id="@+id/nombreFB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/profilePicture"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
+        android:layout_centerVertical="true"
         android:textColor="@color/google_fuentes"
         android:typeface="monospace" />
 
@@ -36,7 +37,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/titulo_parrafo" />
 
-    <TextView
+
+<!--    <TextView
         android:id="@+id/eventosLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -82,10 +84,10 @@
                 android:background="@android:color/transparent"
                 android:drawableTop="@drawable/marker_green"
                 android:textColor="@color/google_fuentes"
+                android:textSize="10dip"
                 android:typeface="monospace"
                 android:text="@string/Cine"
-                android:clickable="false"
-                android:id="@+id/" />
+                android:clickable="false"/>
             <TextView
                 android:id="@+id/contador_cine"
                 android:layout_width="wrap_content"
@@ -109,6 +111,7 @@
                 android:background="@android:color/transparent"
                 android:drawableTop="@drawable/marker_blue"
                 android:textColor="@color/google_fuentes"
+                android:textSize="10dip"
                 android:typeface="monospace"
                 android:text="@string/Musica"
                 android:clickable="false"/>
@@ -135,6 +138,7 @@
                 android:background="@android:color/transparent"
                 android:drawableTop="@drawable/marker_red"
                 android:textColor="@color/google_fuentes"
+                android:textSize="10dip"
                 android:typeface="monospace"
                 android:text="@string/Teatro"
                 android:clickable="false"/>
@@ -172,6 +176,7 @@
                 android:background="@android:color/transparent"
                 android:drawableTop="@drawable/marker_yellow"
                 android:textColor="@color/google_fuentes"
+                android:textSize="10dip"
                 android:typeface="monospace"
                 android:text="@string/Otros"
                 android:clickable="false"/>
@@ -198,6 +203,7 @@
             android:background="@android:color/transparent"
             android:drawableTop="@drawable/marker_violet"
             android:textColor="@color/google_fuentes"
+            android:textSize="10dip"
             android:typeface="monospace"
             android:text="@string/Conferencia"
             android:clickable="false"/>
@@ -224,6 +230,7 @@
                 android:background="@android:color/transparent"
                 android:drawableTop="@drawable/marker_black"
                 android:textColor="@color/google_fuentes"
+                android:textSize="10dip"
                 android:typeface="monospace"
                 android:text="@string/Exposiciones"
                 android:clickable="false"/>
@@ -237,7 +244,7 @@
                 android:text=""
                 />
         </LinearLayout>
-    </LinearLayout>
+    </LinearLayout>-->
 
 
     <ImageButton

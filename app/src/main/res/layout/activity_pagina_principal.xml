@@ -1,24 +1,41 @@
-<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/pager"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white"
-    tools:context=".PaginaPrincipal" >
+    android:layout_height="match_parent">
 
-    <!--
-    This title strip will display the currently visible page title, as well as the page
-    titles for adjacent pages.
-    -->
 
-    <android.support.v4.view.PagerTitleStrip
-        android:id="@+id/pager_title_strip"
+    <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:paddingBottom="4dp"
-        android:paddingTop="4dp"
-        android:textColor="@color/google_fuentes"
-        android:background="@android:color/white"/>
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".PaginaPrincipal">
 
-</android.support.v4.view.ViewPager>
+        <!--
+        This title strip will display the currently visible page title, as well as the page
+        titles for adjacent pages.
+        -->
+
+        <android.support.v4.view.PagerTitleStrip
+            android:id="@+id/pager_title_strip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="@android:color/white"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            android:textColor="@color/google_fuentes" />
+
+    </android.support.v4.view.ViewPager>
+
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#D8FFFFFF"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp" />
+</android.support.v4.widget.DrawerLayout>

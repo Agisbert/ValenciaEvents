@@ -31,6 +31,15 @@ public class FragmentSettings extends Fragment {
     private TextView userName;
     private LoginButton authButton;
 
+/*    TextView contadorCine;
+    TextView contadorTeatro;
+    TextView contadorMusica;
+    TextView contadorOtros;
+    TextView contadorExpo;
+    TextView contadorConfer;
+    TextView contadorTodos;*/
+
+
     private final List<String> permissions;
 
     public FragmentSettings() {
@@ -67,6 +76,13 @@ public class FragmentSettings extends Fragment {
         authButton.setFragment(this);
 //        authButton.setReadPermissions(permissions);
 
+/*        contadorCine = (TextView) view.findViewById(R.id.contador_cine);
+        contadorTeatro = (TextView) view.findViewById(R.id.contador_teatro);
+        contadorMusica = (TextView) view.findViewById(R.id.contador_musica);
+        contadorExpo = (TextView) view.findViewById(R.id.contador_expo);
+        contadorConfer = (TextView) view.findViewById(R.id.contador_conferencia);
+        contadorOtros = (TextView) view.findViewById(R.id.contador_otros);
+        contadorTodos = (TextView) view.findViewById(R.id.eventosNumber);*/
         return view;
     }
 
@@ -139,4 +155,24 @@ public class FragmentSettings extends Fragment {
             userName.setText(null);
         }
     }
+
+/*    public void nuevosDatos(List<Evento> listaEventos){
+        HashMap<String,Integer> contadores = new HashMap<String, Integer>();
+        for(Evento evento : listaEventos){
+            if(contadores.containsKey(evento.getTipo().getTipo())){
+                contadores.put(evento.getTipo().getTipo(), contadores.get(evento.getTipo().getTipo()) + 1);
+            }else{
+                contadores.put(evento.getTipo().getTipo(),1);
+            }
+        }
+
+        contadorCine.setText((contadores.get(Constantes.Cine)!=null)? String.valueOf(contadores.get(Constantes.Cine)): String.valueOf(0));
+        contadorTeatro.setText((contadores.get(Constantes.Teatro)!=null)? String.valueOf(contadores.get(Constantes.Teatro)): String.valueOf(0));
+        contadorMusica.setText((contadores.get(Constantes.Musica)!=null)? String.valueOf(contadores.get(Constantes.Musica)): String.valueOf(0));
+        contadorOtros.setText((contadores.get(Constantes.Otros)!=null)? String.valueOf(contadores.get(Constantes.Otros)): String.valueOf(0));
+        contadorExpo.setText((contadores.get(Constantes.Expo)!=null)? String.valueOf(contadores.get(Constantes.Expo)): String.valueOf(0));
+        contadorConfer.setText((contadores.get(Constantes.Confer)!=null)? String.valueOf(contadores.get(Constantes.Confer)): String.valueOf(0));
+        contadorTodos.setText(String.valueOf(listaEventos.size()));
+
+    }*/
 }

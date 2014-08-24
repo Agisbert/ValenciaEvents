@@ -149,4 +149,12 @@
     <string name="Exposiciones">EXPO</string>
     <string name="Otros">OTROS</string>
     <string name="Eventos">EVENTOS</string>
+
+
+    <string name="apuntateLabel"><u>Apúntate</u></string>
+    <string name="comparteLabel"><u>Comparte</u></string>
+    <string name="otrosLabel"><u>Otros</u></string>
+
+    <string name="lastUpdate">Última actualización: </string>
+    <string name="noDisponible">(No disponible)</string>
 </resources>

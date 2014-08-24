@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/facebook" />
             <option value="$PROJECT_DIR$/fasetest" />
+            <option value="$PROJECT_DIR$/navigationDrawer" />
           </set>
         </option>
       </GradleProjectSettings>

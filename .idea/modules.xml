@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/facebook/facebook.iml" filepath="$PROJECT_DIR$/facebook/facebook.iml" />
       <module fileurl="file://$PROJECT_DIR$/fasetest/fasetest.iml" filepath="$PROJECT_DIR$/fasetest/fasetest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navigationDrawer/navigationDrawer.iml" filepath="$PROJECT_DIR$/navigationDrawer/navigationDrawer.iml" />
     </modules>
   </component>
 </project>
